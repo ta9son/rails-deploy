@@ -60,7 +60,7 @@ jobs:
       - name: Deploy
         run: |
           eval $(ssh-agent)
-          ssh-add ~/.ssh/rails-deploy-webapp
+          ssh-add ~/.ssh/techpit-deploy-study-rails-deploy-webapp
           ssh -o StrictHostKeyChecking=no -A webapp@${{ secrets.TARGET_HOSTNAME }} "cd rails-deploy &&
           git pull origin main &&
           ~/.rbenv/shims/bundle config --local deployment true &&
