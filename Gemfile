@@ -53,8 +53,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'psych', '~> 3.1'
-#capistrano設定
-gem "capistrano", "~> 3.16", require: false
-gem "capistrano-rails", "~> 1.6", require: false
-gem 'capistrano-rbenv', '~> 2.2', require: false
-gem "capistrano3-puma", require: false
