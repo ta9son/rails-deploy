@@ -62,5 +62,5 @@ jobs:
           eval $(ssh-agent)
           ssh-add ~/.ssh/techpit-deploy-study-rails-deploy-webapp
           bundle exec cap production deploy
-          env:
-            CAP_SERVER: ${{ secrets.TARGET_HOSTNAME }}
+        env:
+          CAP_SERVER: ${{ secrets.TARGET_HOSTNAME }}
