@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
 gem 'rails',                   '6.0.4'
 gem 'aws-sdk-s3',               '~> 1', require: false
 gem 'image_processing',           '1.9.3'
@@ -26,14 +25,12 @@ group :development, :test do
   gem 'sqlite3', '1.4.1'
   gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
 end
-
 group :development do
   gem 'web-console',           '4.0.1'
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
 end
-
 group :test do
   gem 'capybara',                 '3.28.0'
   gem 'selenium-webdriver',       '3.142.4'
@@ -44,14 +41,11 @@ group :test do
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.6'
 end
-
 group :production do
-  gem 'pg'
+  gem 'pg', '< 1.3.0'
 end
-
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem 'psych', '~> 3.1'
 #capistrano設定
 gem "capistrano", "~> 3.16", require: false
