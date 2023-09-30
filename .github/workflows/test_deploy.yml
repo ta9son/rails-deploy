@@ -51,32 +51,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      - uses: actions/checkout@v2
-
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.6.8
-
-      - name: Cache bundle
-        uses: actions/cache@v2
-        with:
-            path: vendor/bundle
-            key: bundle-v1-${{ hashFiles('Gemfile.lock') }}
-
-      - name: Run bundle install
-        run: |
-            bundle config --local path vendor/bundle
-            bundle config --local without production
-            bundle install
-
       - name: Install SSH key
         run: |
           mkdir -p -m 700 ~/.ssh
           echo "${{ secrets.SSH_KEY}}" > ~/.ssh/techpit-deploy-study-rails-deploy-webapp
           chmod 600 ~/.ssh/techpit-deploy-study-rails-deploy-webapp
 
-      - name: Capistrano deploy
+      - name: Deploy
         run: |
           eval $(ssh-agent)
           ssh-add ~/.ssh/techpit-deploy-study-rails-deploy-webapp
