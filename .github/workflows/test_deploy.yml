@@ -82,4 +82,3 @@ jobs:
           bundle exec cap production deploy
         env:
           CAP_SERVER: ${{ secrets.TARGET_HOSTNAME }}
-  
